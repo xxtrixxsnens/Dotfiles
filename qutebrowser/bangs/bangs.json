@@ -1,0 +1,33 @@
+{
+  "bangs": [
+    {
+      "c": "Provadis",
+      "d": "teams.microsoft.com",
+      "r": 0,
+      "s": "",
+      "sc": "",
+      "t": "team",
+      "u": "https://teams.microsoft.com"
+    },
+    {
+      "c": "Provadis",
+      "d": "hochschule.provadis-coach.de/view.php?view=files",
+      "r": 0,
+      "s": "",
+      "sc": "",
+      "t": "coach",
+      "u": "https://hochschule.provadis-coach.de/view.php?view=files"
+    },
+    {
+      "c": "Test",
+      "d": "xxtrixxsnens.github.io/quicksearch-public/src/html/add.html",
+      "r": 0,
+      "s": "This is a test description",
+      "sc": "Test Key Word",
+      "t": "test",
+      "u": "https://xxtrixxsnens.github.io/quicksearch-public/src/html/add.html"
+    }
+  ],
+  "defaultBang": "g",
+  "sync": {}
+}

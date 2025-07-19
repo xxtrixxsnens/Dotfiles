@@ -1,0 +1,246 @@
+{
+    // Editor
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.language.brackets": [],
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.fontFamily": "    'Monaspace Neon', monospace",
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
+    "window.autoDetectColorScheme": true,
+    "window.newWindowProfile": "Defaul_Transparent",
+
+    // Workbench
+    "explorer.confirmDelete": false,
+    "timeline.pageSize": 5,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.preview"
+    },
+    "workbench.editor.autoLockGroups": {
+        "editor.excalidraw": true
+    },
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+
+    //// AI
+
+    // Codium
+    "codium.codeCompletion.enable": true,
+
+    // Copilot
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.editor.enableAutoCompletions": false,
+
+    // Terminal
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.fontFamily": "Monaspace Xenon, monospace",
+
+    /// LINTS
+    // Sonarlint
+    "sonarlint.focusOnNewCode": true,
+    "sonarlint.rules": {
+        "java:S1104": {
+            "level": "off"
+        }
+    },
+
+    // ESLINT
+    "eslint.format.enable": true,
+
+    //// Vim settings
+    "vim.useSystemClipboard": true,
+    "vim.leader": "\",
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.files.newUntitledFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+                "workbench.action.quickOpenNavigateNextInFilePicker"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "search.action.openNewEditor"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<F3>"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<F5>"
+            ],
+            "commands": [
+                "workbench.action.terminal.runActiveFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "Y"
+            ],
+            "after": [
+                "y",
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "o"
+            ],
+            "after": [
+                "o",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "O"
+            ],
+            "after": [
+                "O",
+                "<Esc>"
+            ]
+        }
+    ],
+    "editor.lineNumbers": "relative",
+    "editor.cursorLine": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "off",
+    "files.autoSave": "off",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showTabs": true,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.activityBar.visible": true
+
+    //// Languages
+    // Java
+    "maven.executable.path": "${env:MAVEN_HOME}\\bin\\mvn",
+}

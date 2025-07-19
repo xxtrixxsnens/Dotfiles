@@ -1,0 +1,5 @@
+# GENERAL CONFIG
+Host *
+	ControlMaster auto
+	ControlPath ~/.ssh/multiplex/%r@%h:%p
+	ControlPersist 1
