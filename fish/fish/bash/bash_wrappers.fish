@@ -5,6 +5,10 @@ function link_dotfiles
   bash -c 'source "/home/snens/.bashrc.d/link_dotfiles.sh"; link_dotfiles "$@"' -- $argv
 end
 
+function configuration_enviroment
+  bash -c 'source "/home/snens/.bashrc.d/utilities.sh"; configuration_enviroment "$@"' -- $argv
+end
+
 function ctee
   bash -c 'source "/home/snens/.bashrc.d/utilities.sh"; ctee "$@"' -- $argv
 end
@@ -19,5 +23,9 @@ end
 
 function manage_symlinks
   bash -c 'source "/home/snens/.bashrc.d/manage_symlinks.sh"; manage_symlinks "$@"' -- $argv
+end
+
+function reinstall_symlinks
+  bash -c 'source "/home/snens/.bashrc.d/reinstall_symlinks.sh"; reinstall_symlinks "$@"' -- $argv
 end
 

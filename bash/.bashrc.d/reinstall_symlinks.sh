@@ -50,22 +50,27 @@ reinstall_symlinks() {
     BASENAME=$(basename "$CONFIG_FILE_PATH")
     ln -s "$CONFIG_FILE_PATH" "$HOME/$BASENAME"
     source "$CONFIG_FILE_PATH"
-    link_dotfiles /home/snens_data/config_all -d --option '-d --force'
+    link_dotfiles  -d --option '-d --force'
 
+    
     ### GET THE FUNCTIONS
-    source "$HOME".bashrc >/dev/null 2>&1 # Can throw unneccesary errors when reinstalling
-
-    if ! configuration_enviroment; then
-        exit 0 # Exit with 0, otherwise it can crash the Desktop Enviroment
+    source "$HOME"/.bashrc #>/dev/null 2>&1 # Can throw unneccesary errors when reinstalling
+    
+    if ! configuration_enviroment >/dev/null 2>&1; then
+        return 0 # Exit with 0, otherwise it can crash the Desktop Enviroment
     fi
-
+    
     # LINKING CONFIGURATIONS - managed in the other file
     # Link the Dotfiles to CONFIG_HOME
     link_dotfiles $CONFIG_HOME -d --option "-d"
-
+    
     # Link the Configuration to USER_HOME
     manage_symlinks --force --source $CONFIG_HOME --action create --link $USER_HOME --ignore ".git,.gitignore" -d
-
+    
+    # Share my Share file content
+    export SHARE_HOME
+    manage_symlinks --force --source "$SHARE_HOME" --action create --link "/usr/share/snens" -d
+    
     # In this file the user can write there own configs
     username=$(whoami)
     user_config="$HOME/HOME.$username.config/login/symlink_config.sh"

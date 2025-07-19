@@ -12,9 +12,6 @@ ColumnState=AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAj4AAAACAQAAAQAA
 [General]
 Number of Actions=0
 
-[PlasmaTransientsConfig]
-PreloadWeight=18
-
 [PlasmaViews][Panel 110]
 floating=1
 

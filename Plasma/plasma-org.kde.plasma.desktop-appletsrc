@@ -19,17 +19,17 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
 
 [Containments][426][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=1108
+DialogWidth=2021
 
 [Containments][426][General]
-positions={"1920x1080":[],"1969x1231":[],"1976x1235":[],"2259x1271":[]}
+positions={"1920x1080":[],"1969x1231":[],"1976x1235":[],"2021x1137":[],"2259x1271":[],"758x606":[]}
 
 [Containments][426][Wallpaper][org.kde.slideshow][General]
 Blur=true
-FillMode=6
-Image=file:///usr/share/snens.wallpaper/Wallpapers/Hoch/The Last of Us/The Last of Us (25).jpg
-SlidePaths=/usr/share/snens.wallpaper/
+FillMode=1
+Image=file:///usr/share/snens/snens.wallpaper/Wallpapers/Hoch/The Witcher/Landscape/land (29).jpg
+SlidePaths=/usr/share/snens/snens.wallpaper/
 
 [Containments][456]
 activityId=
@@ -119,7 +119,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][463][Applets][467][Applets][474][Configuration]
-PreloadWeight=80
+PreloadWeight=100
 
 [Containments][463][Applets][467][Applets][475]
 immutability=1
@@ -180,7 +180,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][463][Applets][467][Applets][484][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][463][Applets][467][Applets][484][Configuration][General]
 showPercentage=true
@@ -228,9 +228,9 @@ positions={"1920x1080":[],"1969x1231":[]}
 
 [Containments][486][Wallpaper][org.kde.slideshow][General]
 Blur=true
-FillMode=6
-Image=file:///usr/share/snens.wallpaper/Wallpapers/repos/repo-1/Anime - Landscape.jpeg
-SlidePaths=/usr/share/snens.wallpaper/
+FillMode=1
+Image=file:///usr/share/snens/snens.wallpaper/Wallpapers/repos/repo-1/Nature - Waterfall.jpg
+SlidePaths=/usr/share/snens/snens.wallpaper/
 
 [Containments][487]
 activityId=
@@ -289,7 +289,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][487][Applets][490][Applets][497][Configuration]
-PreloadWeight=80
+PreloadWeight=100
 
 [Containments][487][Applets][490][Applets][498]
 immutability=1
