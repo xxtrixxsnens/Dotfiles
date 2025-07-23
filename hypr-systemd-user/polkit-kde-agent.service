@@ -1,0 +1,6 @@
+[Unit]
+Description=Polkit KDE Agent
+
+[Service]
+ExecStart=/usr/lib/polkit-kde-authentication-agent-1
+Restart=on-failure
