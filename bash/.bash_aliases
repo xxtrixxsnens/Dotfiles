@@ -1,6 +1,5 @@
 # DEFAULT EDITOR VIM
 alias nano='vim'
-alias vim='gvim -v'
 
 # MANAGE DATA
 alias cd-data='cd /home/snens_data'

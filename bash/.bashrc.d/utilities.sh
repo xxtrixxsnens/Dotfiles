@@ -68,3 +68,20 @@ tee_clipboard() {
 ctee() {
     "$@" | tee_clipboard
 }
+
+### DISPLAY PRINTED TERMINAL BETTER
+### Better navigate help pages with hilf and hman!
+see() {
+    "$@" >>/tmp/see
+    nvim /tmp/see
+}
+
+hilf() {
+    "$@" --help >>/tmp/hilf
+    $EDITOR /tmp/hilf
+}
+
+hman() {
+    man "$1" >>/tmp/hman
+    $EDITOR /tmp/hman
+}

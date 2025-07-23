@@ -155,3 +155,10 @@ set -o vi
 
 bind -m vi-insert '"jk": vi-movement-mode'
 . "$HOME/.cargo/env"
+
+# Start Hyprland with uwsm if available
+if command -v uwsm >/dev/null 2>&1; then
+    if uwsm check may-start && uwsm select; then
+        exec uwsm start default
+    fi
+fi
