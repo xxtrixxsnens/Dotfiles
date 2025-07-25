@@ -14,4 +14,4 @@ source $SCRIPT_PATH/bash/.bashrc.d/link_dotfiles.sh
 # link_dotfiles [path]
 # path: Where your config files should reside ($HOME, but maybe you have them somewhere else and do from that place a symlink)
 # Creates a symlink to that path.
-link_dotfiles /home/snens_data/config_all
+link_dotfiles /home/user/config_all

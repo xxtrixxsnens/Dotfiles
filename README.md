@@ -10,20 +10,26 @@ You can link the files easily with ``link.sh`` after adjusting the path for your
 
 What to look for:
 - To function, the ``link.sh`` file needs scripts in this bash configuration. => So do not remove it.
-- Every subfolder needs to include a ``.env`` file so that ``link.sh`` knows where to create the link.
+- Every subfolder needs to include a ``*.dotfiles.env`` file so that ``link.sh`` knows where to create the link.
 
     Examples:
-    ~ /bash/bash.env
+    ~ /bash/bash.dotfiles.env
     ```
-    CONFIG_PATH="$HOME"
+    CONFIG_PATH_LINUX="$HOME"
+    CONFIG_PATH_MAC="$HOME"
+    CONFIG_PATH_WINDOWS="/DEV"
     ```
 
-    ~ /fish/fish.env
+    ~ /fish/dotfiles.env
     ```
-    CONFIG_PATH="$HOME/.config"
+    CONFIG_RECURSIVE="true"
     ```
 
 Having no ``.env`` file will just skip that folder.
+
+## Definiton of ``*.dotfiles.env``
+CONFIG_RECURSIVE="true" => Searches subdirectories for ``*.dotfiles.env``.
+CONFIG_PATH_* => The Path for linking the dotfiles.
 
 ## Customize the configuration with "HOME.USERNAME.env"
 This file should be located in the $HOME directory.
@@ -40,7 +46,6 @@ setenv USER_HOME "$HOME"
 
 # Path to the Config Home
 setenv CONFIG_HOME "/home/config"
-
 ```
 
 ## A dev file to configure new user enviroments:
