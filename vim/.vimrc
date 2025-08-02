@@ -142,15 +142,15 @@ let mapleader = " "
 
 " ONLY WORKS WITH A VERSION OF VIM THAT SUPPORTS CLIPBOARD
 " Pasting and Copying to the system
-" --- Yank always to clipboard ---
-nnoremap y "+y
-xnoremap y "+y
-nnoremap yy "+yy
-" --- Paste always from clipboard ---
-nnoremap p "+p
-nnoremap P "+P
-xnoremap p "+p
-xnoremap P "+P
+if has('clipboard')
+  nnoremap y "+y
+  xnoremap y "+y
+  nnoremap yy "+yy
+  nnoremap p "+p
+  nnoremap P "+P
+  xnoremap p "+p
+  xnoremap P "+P
+endif
 " END OF EXCEPTION FOR VERSION THAT SUPPORTS CLIPBOARD
 
 " Press SPACE+B to jump back to the last cursor position.

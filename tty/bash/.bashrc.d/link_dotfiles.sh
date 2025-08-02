@@ -35,6 +35,7 @@ link_dotfiles() {
     local CONFIG_HOME="$HOME"
     local LINK_OPTIONS_STRING=""
     local SILENT_MODE="false"
+    local DEBUG="false"
     local -a FILTER=()
     local -a INCLUDE=()
     local OS="LINUX" # LINUX || MAC || WINDOWS
@@ -47,10 +48,12 @@ link_dotfiles() {
             echo "Usage: link_dotfiles [option] [path]"
             echo "  [option]:"
             echo "    -d               Suppress all script output."
-            echo "   --delete          Deletes the symlinks."
+            echo "    --delete         Deletes the symlinks."
+            echo "    --debug          Verbose output."
             echo "    --ignore         <pattern1,pattern2> Comma-separated list of patterns to ignore (foldernames). Overwrites * (all)."
             echo "    --include        <pattern1,pattern2> Comma-separated list of patterns to include (foldernames). Overwrites patterns in ignore."
             echo "    --option         \"<args>\" Pass a string of arguments directly to manage_symlinks (e.g., '--option \"-d --verbose\"')."
+            echo "    --root           Searches for config files from the given dir instead of the repositories root."
             echo "  [path]:"
             echo "    The path to store the config via symlinks. Defaults to \$HOME if not provided."
             exit 0
@@ -62,6 +65,10 @@ link_dotfiles() {
             ;;
         --delete)
             DELETE="true"
+            shift
+            ;;
+        --debug)
+            DEBUG="true"
             shift
             ;;
         --ignore)
@@ -113,8 +120,11 @@ link_dotfiles() {
             ;;
         -p | --path)
             # If it's not a known option, treat it as the CONFIG_HOME path
-            # This assumes the path doesn't start with '-'
             CONFIG_HOME="$2"
+            shift 2
+            ;;
+        --root)
+            ROOT_DIR_DOTFILES="$(readlink -f "$2")"
             shift 2
             ;;
         *)
@@ -130,6 +140,12 @@ link_dotfiles() {
     # Function to conditionally echo
     local_echo() {
         if [[ "$SILENT_MODE" == "false" ]]; then
+            echo "$@"
+        fi
+    }
+
+    local_debug() {
+        if [[ "$DEBUG" == "true" ]]; then
             echo "$@"
         fi
     }
@@ -172,6 +188,7 @@ link_dotfiles() {
                 if [[ "*" == $PATTERN ]]; then
                     include="default" # Included by default - Can be excluded
                 elif [[ "$basename" == $PATTERN ]]; then
+                    local_debug "INCLUDE: $basename"
                     include="true" # Included in any case
                 fi
             done
@@ -179,6 +196,7 @@ link_dotfiles() {
             # Skip ignored patterns
             for PATTERN in "${FILTER[@]}"; do
                 if [[ ("$basename" == $PATTERN && "$include" != "true") ]]; then
+                    local_debug "EXCLUDE: $basename because of $PATTERN"
                     include="false"
                 fi
             done
@@ -188,6 +206,8 @@ link_dotfiles() {
                 reset
                 return 1
             fi
+
+            local_debug "INCLUDED by default: $basename"
         }
 
         # Search for *.dotfiles.env file in this folder
@@ -270,6 +290,18 @@ link_dotfiles() {
         reset
         return 0
     }
+
+    # DEBUG: PRINT provided input.
+    local_debug "USER_HOME: $USER_HOME"
+    local_debug "CONFIG_HOME: $CONFIG_HOME"
+    local_debug "LINK_OPTIONS_STRING: $LINK_OPTIONS_STRING"
+    local_debug "SILENT_MODE: $SILENT_MODE"
+    local_debug "DEBUG: $DEBUG"
+    local_debug "FILTER: $FILTER"
+    local_debug "INCLUDE: $INCLUDE"
+    local_debug "OS: $OS"
+    local_debug "DELETE: $DELETE"
+    local_debug "ROOT_DIR_DOTFILES: $ROOT_DIR_DOTFILES"
 
     # Set HOME to given Config HOME
     HOME="$CONFIG_HOME"

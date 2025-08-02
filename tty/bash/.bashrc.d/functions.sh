@@ -22,6 +22,28 @@ configuration_enviroment() {
     fi
 }
 
+startvm_services() {
+    /usr/bin/sudo /usr/bin/systemctl enable --now virtqemud.socket
+    /usr/bin/sudo /usr/bin/systemctl enable --now virtlogd.socket
+    /usr/bin/sudo /usr/bin/systemctl enable --now virtproxyd.socket
+    /usr/bin/sudo /usr/bin/systemctl enable --now virtnetworkd.socket
+    /usr/bin/sudo /usr/bin/systemctl enable --now virtstoraged.socket
+    #/usr/bin/sudo /usr/bin/systemctl start libvirtd.service
+    #/usr/bin/sudo /usr/bin/systemctl start virtqemud.service
+    #/usr/bin/sudo /usr/bin/virsh net-start default
+}
+
+stopvm_services() {
+    # /usr/bin/virsh net-destroy default
+    /usr/bin/systemctl disable --now virtstoraged.socket
+    /usr/bin/systemctl disable --now virtnetworkd.socket
+    /usr/bin/systemctl disable --now virtproxyd.socket
+    /usr/bin/systemctl disable --now virtlogd.socket
+    /usr/bin/systemctl disable --now virtqemud.socket
+    /usr/bin/systemctl stop libvirtd.service
+    /usr/bin/systemctl stop virtqemud.service
+}
+
 ### CLIPBOARD
 # Get Output to the Clipboard
 tee_clipboard() {
@@ -72,20 +94,21 @@ ctee() {
 ### DISPLAY PRINTED TERMINAL BETTER
 ### Better navigate help pages with hilf and hman!
 see() {
-    "$@" >>/tmp/see
-    nvim /tmp/see
+    "$@" >/tmp/see
+    $EDITOR /tmp/see
 }
 
 hilf() {
-    "$@" --help >>/tmp/hilf
+    "$@" --help >/tmp/hilf
     $EDITOR /tmp/hilf
 }
 
 hman() {
-    man "$1" >>/tmp/hman
+    man "$1" >/tmp/hman
     $EDITOR /tmp/hman
 }
 
+### Utilites
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
@@ -139,7 +162,7 @@ EOF
     chmod +x "$DESKTOP_FILE"
 }
 
-web2app-remove() {
+web2app_remove() {
     if [ "$#" -ne 1 ]; then
         echo "Usage: web2app-remove <AppName>"
         return 1

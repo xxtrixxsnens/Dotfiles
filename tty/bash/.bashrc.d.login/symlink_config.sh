@@ -9,18 +9,18 @@ fi
 
 # LINKING CONFIGURATIONS - managed in the other file
 # Link the Dotfiles to CONFIG_HOME
+
+if [ -n "$CONFIG_HOME" ]; then
+    CONFIG_HOME="$HOME"
+fi
 link_dotfiles -p $CONFIG_HOME -d
 
 # Link the Configuration to USER_HOME
-manage_symlinks --source $CONFIG_HOME --action create --link $USER_HOME --ignore ".git,.gitignore" -d
+if [ "$USER_HOME" != "$CONFIG_HOME" ]; then
+    manage_symlinks --source $CONFIG_HOME --action create --link $USER_HOME --ignore ".git,.gitignore" -d
+fi
 
 # Share my Share file content
-export SHARE_HOME
-manage_symlinks --source "$SHARE_HOME" --action create --link "/usr/share/snens" -d
-
-# In this file the user can write there own configs
-username=$(whoami)
-user_config="$HOME/HOME.$username.config/login/symlink_config.sh"
-if [[ -f "$user_config" ]]; then
-    source $user_config
+if [ -n "$SHARE_HOME" ]; then
+    manage_symlinks --source "$SHARE_HOME" --action create --link "/usr/share/$USER_HOME" -d
 fi

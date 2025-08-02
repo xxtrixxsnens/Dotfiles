@@ -28,6 +28,10 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
 # Get the Configuration environment
 configuration_enviroment
 

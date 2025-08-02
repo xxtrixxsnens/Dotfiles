@@ -45,11 +45,23 @@ function see
   bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; see "$@"' -- $argv
 end
 
+function startvm_services
+  bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; startvm_services "$@"' -- $argv
+end
+
+function stopvm_services
+  bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; stopvm_services "$@"' -- $argv
+end
+
 function tee_clipboard
   bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; tee_clipboard "$@"' -- $argv
 end
 
 function web2app
   bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; web2app "$@"' -- $argv
+end
+
+function web2app_remove
+  bash -c 'source "/home/snens_arch/.bashrc.d/functions.sh"; web2app_remove "$@"' -- $argv
 end
 
