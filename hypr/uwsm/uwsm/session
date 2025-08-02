@@ -1,0 +1,4 @@
+setenv GTK_THEME Adwaita-dark
+setenv GTK_APPLICATION_PREFER_DARK_THEME 1
+setenv QT_QPA_PLATFORMTHEME qt5ct
+setenv QT_STYLE_OVERRIDE Adwaita-Dark
