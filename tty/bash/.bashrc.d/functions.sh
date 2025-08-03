@@ -35,16 +35,16 @@ startvm_services() {
 
 stopvm_services() {
     # /usr/bin/virsh net-destroy default
-    /usr/bin/systemctl disable --now virtstoraged.socket
-    /usr/bin/systemctl disable --now virtnetworkd.socket
-    /usr/bin/systemctl disable --now virtproxyd.socket
-    /usr/bin/systemctl disable --now virtlogd.socket
-    /usr/bin/systemctl disable --now virtqemud.socket
-    /usr/bin/systemctl stop libvirtd.service
-    /usr/bin/systemctl stop virtqemud.service
+    /usr/bin/sudo /usr/bin/systemctl disable --now virtstoraged.socket
+    /usr/bin/sudo /usr/bin/systemctl disable --now virtnetworkd.socket
+    /usr/bin/sudo /usr/bin/systemctl disable --now virtproxyd.socket
+    /usr/bin/sudo /usr/bin/systemctl disable --now virtlogd.socket
+    /usr/bin/sudo /usr/bin/systemctl disable --now virtqemud.socket
+    /usr/bin/sudo /usr/bin/systemctl stop libvirtd.service
+    /usr/bin/sudo /usr/bin/systemctl stop virtqemud.service
 }
 
-### CLIPBOARD
+### /usr/bin/sudoCLIPBOARD
 # Get Output to the Clipboard
 tee_clipboard() {
     local debug=0
