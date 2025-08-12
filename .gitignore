@@ -5,3 +5,5 @@
 user.dotfiles*/*
 mylink.sh
 
+### Macos
+.DS_Store
