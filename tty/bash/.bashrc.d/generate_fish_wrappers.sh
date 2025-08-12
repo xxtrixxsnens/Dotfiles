@@ -103,11 +103,11 @@ generate_fish_wrappers() {
         }
     elif command -v grep >/dev/null 2>&1; then
         FIND_COMMAND="grep"
-        FIND_REGEX='^(declare -f )?[a-zA-Z_][a-zA-Z0-9_]*()\s*\{'
+        FIND_REGEX='^(declare -f )?[a-zA-Z_][a-zA-Z0-9_]*\(\)[[:space:]]*\{'
         [[ $DEBUG -eq 1 ]] && echo "Using 'grep' with regex: '$FIND_REGEX'"
         FIND_FUNCS() {
             grep -E "$FIND_REGEX" "$1" |
-                sed -E 's/^[[:space:]]*([a-zA-Z_][a-zA-Z0-9_]*)\(\)\s*\{.*/\1/' | sort -u
+                sed -E 's/^(declare -f )?[[:space:]]*([a-zA-Z_][a-zA-Z0-9_]*)\(\)[[:space:]]*\{.*/\2/' | sort -u
         }
     else
         [[ $SILENT -eq 1 ]] && echo "❌ Error: Neither 'rg' nor 'grep' is installed." >&2
