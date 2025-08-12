@@ -31,7 +31,7 @@ manage_symlinks() {
     # Create the symlink
     create() {
         # Avoid self-referencing symlinks
-        if [ "$(realpath -m "$ITEM")" == "$(realpath -m "$LINK_PATH")" ]; then
+        if [ "$(realpath "$ITEM" 2>/dev/null || echo "$ITEM")" == "$(realpath "$LINK_PATH" 2>/dev/null || echo "$LINK_PATH")" ]; then
             [[ $SILENT -eq 1 ]] && echo "Skipping self-referencing symlink: $LINK_PATH"
             return
         fi
@@ -42,9 +42,9 @@ manage_symlinks() {
 
     delete_force() {
         local resolved_link_path
-        resolved_link_path="$(realpath -m "$LINK_PATH")"
+        resolved_link_path="$(realpath "$LINK_PATH" 2>/dev/null || echo "$LINK_PATH")"
         local resolved_allowed_path
-        resolved_allowed_path="$(realpath -m "$ALLOWED_PATH")" # TODO: FIXME!
+        resolved_allowed_path="$(realpath "$ALLOWED_PATH" 2>/dev/null || echo "$ALLOWED_PATH")"
 
         if [[ "$resolved_link_path" == "$resolved_allowed_path"* || true ]]; then
             rm -rf "$LINK_PATH"

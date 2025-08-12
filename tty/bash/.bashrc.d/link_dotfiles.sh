@@ -83,7 +83,7 @@ link_dotfiles() {
             ;;
         --os)
             shift
-            os_input="${1,,}" # Lowercase input (Bash 4+)
+            os_input="$(echo "$1" | tr '[:upper:]' '[:lower:]')" # Portable lowercase conversion
             case "$os_input" in
             linux | ubuntu | debian | arch | fedora)
                 OS="LINUX"
@@ -102,6 +102,7 @@ link_dotfiles() {
                 exit 1
                 ;;
             esac
+            shift
             ;;
         --force)
             LINK_OPTIONS_STRING="$LINK_OPTIONS_STRING --force"
