@@ -4,6 +4,7 @@
 ### My Enviroment
 user.dotfiles*/*
 mylink.sh
+bash_wrappers.fish
 
 ### Macos
 .DS_Store
