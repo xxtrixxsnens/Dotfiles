@@ -14,4 +14,4 @@ source $SCRIPT_PATH/tty/bash/.bashrc.d/link_dotfiles.sh
 # link_dotfiles [path]
 # path: Where your config files should reside ($HOME, but maybe you have them somewhere else and do from that place a symlink)
 # Creates a symlink to that path.
-link_dotfiles -p $HOME --include "default,macos,kitty,tty,fish,bash,vim" --force --os "macos" --debug
+link_dotfiles -p $HOME --include "default,macos,kitty,tty,fish,bash,vim,Code" --force --os "macos" --debug

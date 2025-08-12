@@ -1,0 +1,227 @@
+{
+    // Editor
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.language.brackets": [],
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.fontFamily": "    'Monaspace Neon', monospace",
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
+    "window.autoDetectColorScheme": true,
+    // Workbench
+    "explorer.confirmDelete": false,
+    "timeline.pageSize": 5,
+    "files.autoSave": "afterDelay",
+    //// AI
+    // Codium
+    "codium.codeCompletion.enable": true,
+    // Copilot
+    "github.copilot.editor.enableCodeActions": false,
+    // Terminal
+    "terminal.integrated.fontFamily": "Monaspace Xenon, monospace",
+    /// LINTS
+    // Sonarlint
+    "sonarlint.focusOnNewCode": true,
+    "sonarlint.rules": {
+        "java:S1104": {
+            "level": "off"
+        }
+    },
+    // ESLINT
+    "eslint.format.enable": true,
+    //// Vim settings
+    "vim.leader": " ",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.files.newUntitledFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<leader>"
+            ],
+            "commands": [
+                "search.action.openNewEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+                "workbench.action.quickOpenNavigateNextInFilePicker"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<F3>"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<F5>"
+            ],
+            "commands": [
+                "workbench.action.terminal.runActiveFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                "editor.actions.findWithArgs"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "ß"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "Y"
+            ],
+            "after": [
+                "y",
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "o"
+            ],
+            "after": [
+                "o",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "O"
+            ],
+            "after": [
+                "O",
+                "<Esc>"
+            ]
+        }
+    ],
+    "editor.lineNumbers": "relative",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.tabActionCloseVisibility": false,
+    "window.newWindowProfile": "Default_v1",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.startupEditor": "none",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "git.blame.editorDecoration.enabled": true
+}

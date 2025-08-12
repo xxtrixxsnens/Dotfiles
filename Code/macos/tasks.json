@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test command (Hello World)",
+            "type": "shell",
+            "command": "echo 'Hello World ${workspaceFolderBasename}'; pwd",
+            "problemMatcher": []
+        },
+        {
+            "label": "Where am I",
+            "type": "shell",
+            "command": "pwd"
+        },
+        {
+            "label": "Clean Workspace",
+            "type": "shell",
+            "command": "echo 'Cleaning up workspace ${workspaceFolderBasename} at ...\n'; pwd;  find . -type d \\( -name 'target' -o -name 'build' \\) -exec rm -rf {} +; echo '\nCleaned up ${workspaceFolderBasename}!\n';",
+            "problemMatcher": [],
+            "group": {
+                "kind": "none"
+            },
+            "detail": "Deletes all 'target' and 'build' directories in the workspace."
+        }
+    ]
+}
