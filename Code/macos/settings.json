@@ -1,4 +1,5 @@
 {
+"update.mode": "none",
     // Editor
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -16,8 +17,6 @@
     "timeline.pageSize": 5,
     "files.autoSave": "afterDelay",
     //// AI
-    // Codium
-    "codium.codeCompletion.enable": true,
     // Copilot
     "github.copilot.editor.enableCodeActions": false,
     // Terminal
@@ -33,7 +32,6 @@
     // ESLINT
     "eslint.format.enable": true,
     //// Vim settings
-    "vim.leader": " ",
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
@@ -63,20 +61,29 @@
         {
             "before": [
                 "<leader>",
-                "<leader>"
+                "/"
             ],
             "commands": [
-                "search.action.openNewEditor"
+                "workbench.action.findInFiles"
             ]
         },
         {
             "before": [
                 "<leader>",
-                "e"
+                "<leader>"
             ],
             "commands": [
                 "workbench.action.quickOpen",
                 "workbench.action.quickOpenNavigateNextInFilePicker"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "search.action.openNewEditor"
             ]
         },
         {
@@ -119,16 +126,7 @@
             "commands": [
                 "workbench.action.navigateBack"
             ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s"
-            ],
-            "commands": [
-                "editor.actions.findWithArgs"
-            ]
-        },
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -214,14 +212,9 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabActionCloseVisibility": false,
-    "window.newWindowProfile": "Default_v1",
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
-    },
-    "workbench.startupEditor": "none",
+    "vim.leader": " ",
     "github.copilot.nextEditSuggestions.enabled": true,
-    "git.blame.editorDecoration.enabled": true
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "git.openRepositoryInParentFolders": "never",
+    "git.blame.editorDecoration.enabled": false
 }
