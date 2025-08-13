@@ -28,6 +28,14 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# Add /usr/local/bin to PATH on macOS if it exists
+if [[ "$OSTYPE" == "darwin"* ]] && [ -d "/usr/local/bin" ]; then
+    if ! [[ "$PATH" =~ "/usr/local/bin" ]]; then
+        PATH="/usr/local/bin:$PATH"
+    fi
+    export PATH
+fi
+
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
