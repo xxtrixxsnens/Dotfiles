@@ -30,7 +30,7 @@
         "command": "workbench.action.splitEditorRight"
     },
     {
-        "key": "ctrl+w",
+        "key": "ctrl+o",
         "command": "workbench.action.closeActiveEditor"
     },
     {
@@ -78,5 +78,19 @@
       "key": "ctrl+c",
       "command": "extension.vim_escape",
       "when": "editorTextFocus && vim.mode == 'Visual'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
     }
 ]

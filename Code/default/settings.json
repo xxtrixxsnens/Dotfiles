@@ -1,4 +1,5 @@
 {
+"update.mode": "none",
     // Editor
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -11,35 +12,15 @@
     "editor.fontFamily": "    'Monaspace Neon', monospace",
     "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
     "window.autoDetectColorScheme": true,
-    "window.newWindowProfile": "Defaul_Transparent",
-
     // Workbench
     "explorer.confirmDelete": false,
     "timeline.pageSize": 5,
     "files.autoSave": "afterDelay",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editorAssociations": {
-        "*.pdf": "pdf.preview"
-    },
-    "workbench.editor.autoLockGroups": {
-        "editor.excalidraw": true
-    },
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.preferredDarkColorTheme": "Solarized Dark",
-
     //// AI
-
-    // Codium
-    "codium.codeCompletion.enable": true,
-
     // Copilot
     "github.copilot.editor.enableCodeActions": false,
-    "github.copilot.editor.enableAutoCompletions": false,
-
     // Terminal
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.fontFamily": "Monaspace Xenon, monospace",
-
     /// LINTS
     // Sonarlint
     "sonarlint.focusOnNewCode": true,
@@ -48,13 +29,10 @@
             "level": "off"
         }
     },
-
     // ESLINT
     "eslint.format.enable": true,
-
     //// Vim settings
     "vim.useSystemClipboard": true,
-    "vim.leader": "\",
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.ignorecase": true,
@@ -83,7 +61,7 @@
         {
             "before": [
                 "<leader>",
-                "f"
+                "/"
             ],
             "commands": [
                 "workbench.action.findInFiles"
@@ -92,7 +70,7 @@
         {
             "before": [
                 "<leader>",
-                "d"
+                "<leader>"
             ],
             "commands": [
                 "workbench.action.quickOpen",
@@ -102,7 +80,7 @@
         {
             "before": [
                 "<leader>",
-                "f"
+                "/"
             ],
             "commands": [
                 "search.action.openNewEditor"
@@ -228,19 +206,15 @@
         }
     ],
     "editor.lineNumbers": "relative",
-    "editor.cursorLine": true,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
-    "editor.wordWrap": "off",
-    "files.autoSave": "off",
     "files.trimTrailingWhitespace": true,
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "workbench.editor.enablePreview": false,
-    "workbench.editor.showTabs": true,
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.activityBar.visible": true
-
-    //// Languages
-    // Java
-    "maven.executable.path": "${env:MAVEN_HOME}\\bin\\mvn",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "vim.leader": " ",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "git.openRepositoryInParentFolders": "never",
+    "git.blame.editorDecoration.enabled": false
 }
