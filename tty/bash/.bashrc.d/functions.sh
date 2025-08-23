@@ -30,11 +30,11 @@ startvm_services() {
     /usr/bin/sudo /usr/bin/systemctl enable --now virtstoraged.socket
     #/usr/bin/sudo /usr/bin/systemctl start libvirtd.service
     #/usr/bin/sudo /usr/bin/systemctl start virtqemud.service
-    #/usr/bin/sudo /usr/bin/virsh net-start default
+    /usr/bin/sudo /usr/bin/virsh net-start default
 }
 
 stopvm_services() {
-    # /usr/bin/virsh net-destroy default
+    /usr/bin/sudo /usr/bin/virsh net-destroy default
     /usr/bin/sudo /usr/bin/systemctl disable --now virtstoraged.socket
     /usr/bin/sudo /usr/bin/systemctl disable --now virtnetworkd.socket
     /usr/bin/sudo /usr/bin/systemctl disable --now virtproxyd.socket
@@ -175,4 +175,30 @@ web2app_remove() {
 
     rm "$DESKTOP_FILE"
     rm "$ICON_PATH"
+}
+
+mount_sftp() {
+    if [ "$#" -ne 3 ]; then
+        echo "Usage: mount_sftp <MOUNT_PATH> <REMOTE_ADDRESS> <REMOTE_SSH_CONNECTION>"
+        return 1
+    fi
+
+    local MOUNT_PATH="$1"
+    local REMOTE_SSH_CONNECTION="$2"
+    local REMOTE_ADDRESS="$3"
+
+    local SLEEP_TIME=5
+    # Wait for a Response by pinging host
+    until ping -c1 $REMOTE_ADDRESS &>/dev/null; do
+        sleep $SLEEP_TIME
+        $SLEEP_TIME=$(($SLEEP_TIME * 2))
+    done
+
+    # Now mount
+    sshfs $REMOTE_SSH_CONNECTION "$MOUNT_PATH" \
+        -o reconnect \
+        -o ServerAliveInterval=15 \
+        -o ServerAliveCountMax=3 \
+        -o idmap=user \
+        -o StrictHostKeyChecking=no
 }

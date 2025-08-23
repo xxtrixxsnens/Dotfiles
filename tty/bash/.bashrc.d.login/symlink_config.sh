@@ -22,5 +22,5 @@ fi
 
 # Share my Share file content
 if [ -n "$SHARE_HOME" ]; then
-    manage_symlinks --source "$SHARE_HOME" --action create --link "/usr/share/$USER_HOME" -d
+    manage_symlinks --source "$SHARE_HOME" --action create --link "/usr/share/$USER" -d
 fi
