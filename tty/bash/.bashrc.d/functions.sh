@@ -179,7 +179,7 @@ web2app_remove() {
 
 mount_sftp() {
     if [ "$#" -ne 3 ]; then
-        echo "Usage: mount_sftp <MOUNT_PATH> <REMOTE_ADDRESS> <REMOTE_SSH_CONNECTION>"
+        echo "Usage: mount_sftp <MOUNT_PATH> <REMOTE_SSH_CONNECTION> <REMOTE_ADDRESS>"
         return 1
     fi
 
@@ -191,7 +191,7 @@ mount_sftp() {
     # Wait for a Response by pinging host
     until ping -c1 $REMOTE_ADDRESS &>/dev/null; do
         sleep $SLEEP_TIME
-        $SLEEP_TIME=$(($SLEEP_TIME * 2))
+        SLEEP_TIME=$(($SLEEP_TIME * 2))
     done
 
     # Now mount
